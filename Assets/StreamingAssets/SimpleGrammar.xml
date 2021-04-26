@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<grammar xml:lang="en"
+         tag-format="semantics/1.0"
+         version="1.0"
+         xmlns="http://www.w3.org/2001/06/grammar"
+         root="commands"
+         mode="voice">
+
+  <rule id="commands">
+    <one-of>
+      <item>
+        <ruleref uri="#play"/>
+      </item>
+      <item>
+        <ruleref uri="#gameState"/>
+      </item>
+      <item>
+        <ruleref uri="#quit"/>
+      </item>
+      <item>
+        <ruleref uri="#move"/>
+      </item>
+      <item>
+        <ruleref uri="#changeVolume"/>
+      </item>
+      <item>
+        <ruleref uri="#mainMenu"/>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="play">
+    <one-of>
+      <item>
+        <tag>out="play";</tag>
+        <one-of>
+          <item>play</item>
+          <item>play again</item>
+          <item>play game</item>
+          <item>start game</item>
+          <item>new game</item>
+          <item>restart game</item>
+          <item>restart</item>
+        </one-of>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="gameState">
+    <one-of>
+      <item>
+        <tag>out="pause";</tag>
+        <one-of>
+          <item>pause</item>
+          <item>pause game</item>
+          <item>freeze game</item>
+          <item>hold on</item>
+          <item>wait</item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out="resume";</tag>
+        <one-of>
+          <item>resume</item>
+          <item>unpause</item>
+          <item>resume game</item>
+          <item>lets go</item>
+          <item>continue</item>
+        </one-of>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="quit">
+    <one-of>
+      <item>
+        <tag>out="quit";</tag>
+        <one-of>
+          <item>leave game</item>
+          <item>quit game</item>
+          <item>exit game</item>
+          <item>stop game</item>
+          <item>exit</item>
+          <item>quit</item>
+        </one-of>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="move">
+    <one-of>
+      <item>
+        <tag>out="up";</tag>
+        <one-of>
+          <item>up</item>
+          <item>go up</item>
+          <item>move up</item>
+          <item>north</item>
+          <item>go north</item>
+          <item>move north</item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out="down";</tag>
+        <one-of>
+          <item>down</item>
+          <item>go down</item>
+          <item>move down</item>
+          <item>south</item>
+          <item>go south</item>
+          <item>move south</item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out="left";</tag>
+        <one-of>
+          <item>left</item>
+          <item>go left</item>
+          <item>move left</item>
+          <item>west</item>
+          <item>go west</item>
+          <item>move west</item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out="right";</tag>
+        <one-of>
+          <item>right</item>
+          <item>go right</item>
+          <item>move right</item>
+          <item>east</item>
+          <item>go east</item>
+          <item>move east</item>
+        </one-of>
+      </item>      
+    </one-of>
+  </rule>
+
+  <rule id="changeVolume">
+    <one-of>
+      <item>
+        <tag>out="increaseVol";</tag>
+        <one-of>
+          <item>louder</item>
+          <item>increase volume</item>
+          <item>volume up</item>
+          <item>turn the volume up</item>
+        </one-of>
+      </item>
+      <item>
+        <tag>out="decreaseVol";</tag>
+        <one-of>
+          <item>quieter</item>
+          <item>decrease volume</item>
+          <item>volume down</item>
+          <item>turn the volume down</item>
+        </one-of>
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="mainMenu">
+    <one-of>
+      <item>
+        <tag>out="mainMenu";</tag>
+        <one-of>
+          <item>main menu</item>
+          <item>menu</item>
+          <item>go to menu</item>
+          <item>home</item>
+        </one-of>
+      </item>
+    </one-of>
+  </rule>
+
+</grammar>
